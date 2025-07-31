@@ -1,0 +1,9 @@
+@layer components {
+  .project-list-heading {
+    @apply text-lg group-hover:underline group-hover:text-pink-900 group-hover:bg-pink-100 p-1;
+  }
+
+  .project-list-description {
+    @apply pl-3 border-l-3 border-dashed border-pink-300 group-hover:text-pink-900 group-hover:bg-pink-100 group-hover:underline flex items-center;
+  }
+}
