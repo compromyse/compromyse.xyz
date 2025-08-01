@@ -11,7 +11,18 @@
       msg = msgpkgs.packages.x86_64-linux.default;
     in {
       devShells.x86_64-linux.default = pkgs.mkShell {
-        buildInputs = [ msg ];
+        buildInputs = with pkgs; [
+          http-server
+          tailwindcss_4
+          watchman
+        ] ++ [
+          (pkgs.writeShellScriptBin "css" ''
+            tailwindcss -i tailwind_in.css -o assets/stylesheet.css -m $@
+          '')
+          (pkgs.writeShellScriptBin "serve" ''
+            http-server dist -c-1
+          '')
+        ] ++ [ msg ];
       };
     };
 }
