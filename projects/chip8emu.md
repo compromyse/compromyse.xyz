@@ -7,7 +7,7 @@ link = https://github.com/compromyse/autograd
 linklabel = SOURCE
 ---
 
-![image](https://github.com/compromyse/CHIP8Emu/assets/71056504/f87e9e73-f880-4d60-a61b-cdb40791211b)
+<img src="https://github.com/compromyse/CHIP8Emu/assets/71056504/f87e9e73-f880-4d60-a61b-cdb40791211b" class="mx-auto" />
 
 ## About The Project
 
