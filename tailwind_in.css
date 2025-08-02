@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@plugin "@tailwindcss/typography";
 
 @layer components {
   .project-list-heading {
@@ -7,5 +8,21 @@
 
   .project-list-description {
     @apply pl-3 border-l-3 border-dashed border-pink-300 group-hover:text-pink-900 group-hover:bg-pink-100 group-hover:underline flex items-center;
+  }
+}
+
+@layer utilities {
+  .prose {
+    --tw-prose-body: var(--color-text);
+    --tw-prose-headings: var(--color-primary);
+    --tw-prose-links: var(--color-primary);
+    --tw-prose-bold: var(--color-primary-light);
+    --tw-prose-hr: var(--color-border);
+    --tw-prose-code: var(--color-primary);
+    --tw-prose-quotes: var(--color-primary);
+  }
+
+  .prose a:hover {
+    color: var(--color-primary-light);
   }
 }
