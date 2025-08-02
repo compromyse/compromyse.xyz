@@ -17,6 +17,14 @@
   .button-inverted {
     @apply h-full bg-pink-100 text-pink-900 hover:bg-zinc-900 hover:text-pink-300 hover:underline border-transparent hover:border-pink-300 border-2 selection:bg-zinc-400;
   }
+
+  .card-container {
+    @apply px-16 flex flex-wrap gap-8 items-stretch justify-center;
+  }
+  
+  .card-anchor {
+    @apply flex-grow flex-shrink basis-128 min-w-64 max-w-128 py-2 px-4 flex flex-col justify-between w-full;
+  }
 }
 
 @layer utilities {
@@ -32,5 +40,16 @@
 
   .prose a:hover {
     color: var(--color-primary-light);
+  }
+
+}
+
+@layer base {
+  code,
+  kbd,
+  samp,
+  pre {
+    font-family: "Jersey 15";
+    font-size: 40px;
   }
 }

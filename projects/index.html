@@ -1,23 +1,22 @@
-{{ contentfor "title" }}PROJECTS{{ endcontent }}
+title = PROJECTS
+---
 
 <div class="p-16">
   <h1 class="text-5xl">PROJECTS</h1>
   <p class="text-xl">Here's a bunch of things I've done.</p>
 </div>
 
-<div class="px-16 flex flex-wrap gap-8 items-stretch justify-center">
+<div class="card-container">
 
   {{ eachdo projects }}
 
-    <a href="{{ put url }}" class="flex-grow flex-shrink basis-128 min-w-64 max-w-128">
-      <div class="button-inverted py-2 px-4 flex flex-col justify-between">
-        <div class="flex flex-col gap-2 pt-2 items-center items-center">
-          <p class="text-2xl font-semibold text-center">{{ put name }}</p>
-          <p class="text-xl text-center text-wrap">{{ put description }}</p>
-        </div>
-
-        <div class="text-center text-sm border-t-2 mt-3 py-1">{{ put languages }}</div>
+    <a href="{{ put url }}" class="card-anchor button-inverted">
+      <div class="flex flex-col gap-2 pt-2 items-center items-center">
+        <p class="text-2xl font-semibold text-center">{{ put name }}</p>
+        <p class="text-xl text-center text-wrap">{{ put description }}</p>
       </div>
+
+      <div class="text-center text-sm border-t-2 mt-3 py-1">{{ put languages }}</div>
     </a>
 
   {{ endeachdo }}

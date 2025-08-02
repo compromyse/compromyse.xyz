@@ -20,7 +20,7 @@
             tailwindcss -i tailwind_in.css -o assets/stylesheet.css -m $@
           '')
           (pkgs.writeShellScriptBin "serve" ''
-            http-server dist -c-1
+            http-server -c-1 $@
           '')
         ] ++ [ msg ];
       };
