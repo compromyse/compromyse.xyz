@@ -9,6 +9,14 @@
   .project-list-description {
     @apply pl-3 border-l-3 border-dashed border-pink-300 group-hover:text-pink-900 group-hover:bg-pink-100 group-hover:underline flex items-center;
   }
+
+  .button {
+    @apply hover:underline hover:text-pink-900 hover:bg-pink-100 p-1 border-2 px-4;
+  }
+
+  .button-inverted {
+    @apply h-full bg-pink-100 text-pink-900 hover:bg-zinc-900 hover:text-pink-300 hover:underline border-transparent hover:border-pink-300 border-2 selection:bg-zinc-400;
+  }
 }
 
 @layer utilities {
