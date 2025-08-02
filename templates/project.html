@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>{{ content "title" }} | COMPROMYSE</title>
+    <title>{{ putpage name }} | COMPROMYSE</title>
 
     <link href="/assets/stylesheet.css" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
@@ -14,10 +14,23 @@
 
       {{ include "navbar.html" }}
 
-      <div class="flex flex-grow flex-col prose md:prose-lg lg:prose-xl prose-pink prose-invert py-8 px-14">
-        {{ body }}
-      </div>
+      <div class="flex flex-grow flex-col py-8 px-14 items-center">
 
+        <div class="text-center flex flex-col gap-4">
+          <h1 class="text-5xl font-semibold">{{ putpage name }}</h1>
+          <div>
+            <h4 class="text-xl">{{ putpage description }}</h4>
+            <h6 class="text-center text-sm border-t-4 mt-2 py-1">{{ putpage languages }}</h6>
+          </div>
+
+          <a href="{{ putpage link }}" target="_blank" class="hover:underline hover:text-pink-900 hover:bg-pink-100 p-1 border-2">{{ putpage linklabel }}</a>
+        </div>
+
+        <div class="prose md:prose-lg lg:prose-xl prose-pink prose-invert w-full pt-12">
+          {{ body }}
+        </div>
+
+      </div>
       {{ include "footer.html" }}
 
     </div>
