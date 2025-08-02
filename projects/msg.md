@@ -7,7 +7,7 @@ link = https://github.com/compromyse/msg
 linklabel = SOURCE
 ---
 
-> See https://github.com/compromyse/compromyse.xyz for an example site.
+See [github.com/compromyse/compromyse.xyz](https://github.com/compromyse/compromyse.xyz) for an example site.
 
 ### Compilation & Usage
 ```sh
