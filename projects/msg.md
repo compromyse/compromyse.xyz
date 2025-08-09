@@ -5,6 +5,7 @@ url = /projects/msg
 template = project.html
 link = https://github.com/compromyse/msg
 linklabel = SOURCE
+priority = 4
 ---
 
 See [github.com/compromyse/compromyse.xyz](https://github.com/compromyse/compromyse.xyz) for an example site.

@@ -5,6 +5,7 @@ url = /projects/autograd
 template = project.html
 link = https://github.com/compromyse/autograd
 linklabel = SOURCE
+priority = 1
 ---
 
 All you need to run a simple neural network using autograd is the following code:

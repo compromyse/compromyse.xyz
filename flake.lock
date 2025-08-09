@@ -5,11 +5,11 @@
         "nixpkgs": "nixpkgs"
       },
       "locked": {
-        "lastModified": 1754727991,
-        "narHash": "sha256-gcuMWM5sfL03xV2R3Za7oQngostsM66jKYqV/epBCPE=",
+        "lastModified": 1754759707,
+        "narHash": "sha256-5nr8TwJHrIvcSWCArzvHTt2MAjTIgdLgEJ6zL3OpXYE=",
         "ref": "refs/heads/main",
-        "rev": "0dfc3a0829bd757562937aa2d2eb7a08a490c8ed",
-        "revCount": 251,
+        "rev": "48faa8e018673876b2a8489310853e0ef8628428",
+        "revCount": 259,
         "submodules": true,
         "type": "git",
         "url": "ssh://git@github.com/compromyse/msg.git"

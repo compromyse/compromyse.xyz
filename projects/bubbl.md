@@ -5,6 +5,7 @@ url = /projects/bubbl
 template = project.html
 link = https://github.com/compromyse/bubbl
 linklabel = SOURCE
+priority = 3
 ---
 
 ## Building

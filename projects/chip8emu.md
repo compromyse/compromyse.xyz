@@ -5,6 +5,7 @@ url = /projects/chip8emu
 template = project.html
 link = https://github.com/compromyse/autograd
 linklabel = SOURCE
+priority = 2
 ---
 
 <img src="https://github.com/compromyse/CHIP8Emu/assets/71056504/f87e9e73-f880-4d60-a61b-cdb40791211b" class="mx-auto" />
