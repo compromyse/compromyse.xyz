@@ -86,7 +86,7 @@ title = XYZ
 <h1>XYZ!</h1>
 
 <!-- index.html -->
-{{ eachdo projects }}
+{{ eachdo resources.projects }}
 <p>{{ put title }}</p>
 {{ endeachdo }}
 ```
