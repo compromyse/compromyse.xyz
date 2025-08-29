@@ -3,8 +3,10 @@ description = An Operating System for The x86 Architecture.
 languages = C / C++ / ASM
 url = /projects/bubbl
 template = project.html
-link = https://github.com/compromyse/bubbl
-linklabel = SOURCE
+links = [
+    href = https://github.com/compromyse/bubbl
+    label = SOURCE
+]
 priority = 3
 ---
 

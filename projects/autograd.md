@@ -3,8 +3,10 @@ description = An implementation of autograd / backpropagation.
 languages = Python
 url = /projects/autograd
 template = project.html
-link = https://github.com/compromyse/autograd
-linklabel = SOURCE
+links = [
+    href = https://github.com/compromyse/autograd
+    label = SOURCE
+]
 priority = 1
 ---
 

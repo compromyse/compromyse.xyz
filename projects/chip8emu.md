@@ -3,8 +3,10 @@ description = An Emulator/Interpreter for CHIP-8.
 languages = C++
 url = /projects/chip8emu
 template = project.html
-link = https://github.com/compromyse/autograd
-linklabel = SOURCE
+links = [
+    href = https://github.com/compromyse/autograd
+    label = SOURCE
+]
 priority = 2
 ---
 

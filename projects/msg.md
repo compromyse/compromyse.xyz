@@ -3,8 +3,10 @@ description = An incredibly opinionated, hackable, minimal Static Site Generator
 languages = C
 url = /projects/msg
 template = project.html
-link = https://github.com/compromyse/msg
-linklabel = SOURCE
+links = [
+    href = https://github.com/compromyse/msg
+    label = SOURCE
+]
 priority = 4
 ---
 
