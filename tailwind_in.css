@@ -2,54 +2,54 @@
 @plugin "@tailwindcss/typography";
 
 @layer components {
-  .project-list-heading {
-    @apply text-lg group-hover:underline group-hover:text-pink-900 group-hover:bg-pink-100 p-1;
-  }
+    .project-list-heading {
+        @apply text-lg group-hover:underline group-hover:text-pink-900 group-hover:bg-pink-100 p-1;
+    }
 
-  .project-list-description {
-    @apply pl-3 border-l-3 border-dashed border-pink-300 group-hover:text-pink-900 group-hover:bg-pink-100 group-hover:underline flex items-center;
-  }
+    .project-list-description {
+        @apply pl-3 border-l-3 border-dashed border-pink-300 group-hover:text-pink-900 group-hover:bg-pink-100 group-hover:underline flex items-center;
+    }
 
-  .button {
-    @apply hover:underline hover:text-pink-900 hover:bg-pink-100 p-1 border-2 px-4;
-  }
+    .button {
+        @apply hover:underline hover:text-pink-900 hover:bg-pink-100 p-1 border-2 px-4;
+    }
 
-  .button-inverted {
-    @apply h-full bg-pink-100 text-pink-900 hover:bg-zinc-900 hover:text-pink-300 hover:underline border-transparent hover:border-pink-300 border-2 selection:bg-zinc-400;
-  }
+    .button-inverted {
+        @apply h-full bg-pink-100 text-pink-900 hover:bg-zinc-900 hover:text-pink-300 hover:underline border-transparent hover:border-pink-300 border-2 selection:bg-zinc-400;
+    }
 
-  /* auto-rows-[1fr] is to make sure that all cards have the same height across rows */
-  .card-container {
-    @apply px-16 gap-8 justify-center grid grid-cols-3 auto-rows-[1fr];
-  }
-  
-  .card-anchor {
-    @apply max-w-128 py-2 px-4 flex flex-col justify-center;
-  }
+    /* auto-rows-[1fr] is to make sure that all cards have the same height across rows */
+    .card-container {
+        @apply px-16 gap-8 justify-center grid grid-cols-3 auto-rows-[1fr];
+    }
+
+    .card-anchor {
+        @apply max-w-128 py-2 px-4 flex flex-col justify-center;
+    }
 }
 
 @layer utilities {
-  .prose {
-    --tw-prose-body: var(--color-text);
-    --tw-prose-headings: var(--color-primary);
-    --tw-prose-links: var(--color-primary);
-    --tw-prose-bold: var(--color-primary-light);
-    --tw-prose-hr: var(--color-border);
-    --tw-prose-code: var(--color-primary);
-    --tw-prose-quotes: var(--color-primary);
-  }
+    .prose {
+        --tw-prose-body: var(--color-text);
+        --tw-prose-headings: var(--color-primary);
+        --tw-prose-links: var(--color-primary);
+        --tw-prose-bold: var(--color-primary-light);
+        --tw-prose-hr: var(--color-border);
+        --tw-prose-code: var(--color-primary);
+        --tw-prose-quotes: var(--color-primary);
+    }
 
-  .prose a:hover {
-    color: var(--color-primary-light);
-  }
+    .prose a:hover {
+        color: var(--color-primary-light);
+    }
 }
 
 @layer base {
-  code,
-  kbd,
-  samp,
-  pre {
-    font-family: "Jersey 15";
-    font-size: 40px;
-  }
+    code,
+    kbd,
+    samp,
+    pre {
+        font-family: "Jersey 15";
+        font-size: 40px;
+    }
 }

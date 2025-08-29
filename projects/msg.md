@@ -23,11 +23,11 @@ $ ./msg -h
 msg: The Minimal Static Site Generator
 
 Usage: ./msg [-h] [-w] [-v] [-o <output>] <directory>
-        -h         : Help
-        -w         : Watch working directory for changes
-        -v         : Verbose
-        -o <output>: Output directory
-        <directory>: Working directory
+-h         : Help
+-w         : Watch working directory for changes
+-v         : Verbose
+-o <output>: Output directory
+<directory>: Working directory
 ```
 
 ### Site Structure
@@ -42,7 +42,7 @@ Usage: ./msg [-h] [-w] [-v] [-o <output>] <directory>
 │   ├── navbar.html
 ├── projects.html
 └── templates
-    └── base.html
+└── base.html
 ```
 
 ### Features
@@ -52,10 +52,10 @@ Usage: ./msg [-h] [-w] [-v] [-o <output>] <directory>
 ```html
 <!-- index.html -->
 <html>
-  <body>
-    {{ include "navbar.html" }}
-    ...
-  </body>
+<body>
+{{ include "navbar.html" }}
+...
+</body>
 </html>
 ```
 
@@ -64,12 +64,12 @@ Usage: ./msg [-h] [-w] [-v] [-o <output>] <directory>
 ```html
 <!-- templates/base.html -->
 <html>
-  <head>
-    {{ content "head" }}
-  </head>
-  <body>
-    {{ body }}
-  </body>
+<head>
+{{ content "head" }}
+</head>
+<body>
+{{ body }}
+</body>
 </html>
 
 <!-- index.html -->
