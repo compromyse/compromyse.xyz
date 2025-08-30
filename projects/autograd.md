@@ -36,4 +36,4 @@ n = MLP(3, [ 4, 4, 1 ])
     n.optimise(0.01)
 
     print(pred)
-    ```
+```
