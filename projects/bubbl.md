@@ -16,14 +16,14 @@ priority = 3
 
 After entering the devshell (with direnv or `nix develop`),
 
-      ```sh
-      mkdir build && cd build
-      cmake -G Ninja ..
-      ninja
-      ```
+```sh
+mkdir build && cd build
+cmake -G Ninja ..
+ninja
+```
 
 ## Running
 
-      ```sh
-      ninja run # or run-headless or run-gdb
-      ```
+```sh
+ninja run # or run-headless or run-gdb
+```
