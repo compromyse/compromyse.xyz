@@ -1,6 +1,6 @@
 name = MSG
 description = An incredibly opinionated, hackable, minimal Static Site Generator.
-languages = C
+tags = C
 url = /projects/msg
 template = project.html
 links = [
@@ -23,11 +23,11 @@ $ ./msg -h
 msg: The Minimal Static Site Generator
 
 Usage: ./msg [-h] [-w] [-v] [-o <output>] <directory>
--h         : Help
--w         : Watch working directory for changes
--v         : Verbose
--o <output>: Output directory
-<directory>: Working directory
+        -h         : Help
+        -w         : Watch working directory for changes
+        -v         : Verbose
+        -o <output>: Output directory
+        <directory>: Working directory
 ```
 
 ### Site Structure
@@ -42,7 +42,7 @@ Usage: ./msg [-h] [-w] [-v] [-o <output>] <directory>
 │   ├── navbar.html
 ├── projects.html
 └── templates
-└── base.html
+    └── base.html
 ```
 
 ### Features
@@ -52,10 +52,10 @@ Usage: ./msg [-h] [-w] [-v] [-o <output>] <directory>
 ```html
 <!-- index.html -->
 <html>
-<body>
-{{ include "navbar.html" }}
-...
-</body>
+  <body>
+    {{ include "navbar.html" }}
+    ...
+  </body>
 </html>
 ```
 
@@ -64,12 +64,12 @@ Usage: ./msg [-h] [-w] [-v] [-o <output>] <directory>
 ```html
 <!-- templates/base.html -->
 <html>
-<head>
-{{ content "head" }}
-</head>
-<body>
-{{ body }}
-</body>
+  <head>
+    {{ content "head" }}
+  </head>
+  <body>
+    {{ body }}
+  </body>
 </html>
 
 <!-- index.html -->
@@ -84,6 +84,13 @@ Usage: ./msg [-h] [-w] [-v] [-o <output>] <directory>
 ```html
 <!-- projects/xyz.html -->
 title = XYZ
+links = [
+    href = https://example.org
+    label = abc
+    ___
+    href = https://google.com
+    label = test
+]
 ---
 
 <h1>XYZ!</h1>
@@ -91,6 +98,27 @@ title = XYZ
 <!-- index.html -->
 {{ eachdo resources.projects }}
 <p>{{ put title }}</p>
+{{ endeachdo }}
+
+{{ eachdo page.links }}
+<p>{{ put href }}</p>
+<p>{{ put label }}</p>
+{{ endeachdo }}
+```
+
+```html
+<!-- config.cfg -->
+links = [
+    href = https://github.com/compromyse
+    label = GITHUB
+    ___
+    href = https://www.linkedin.com/in/compromyse
+    label = LINKEDIN
+]
+
+<!-- index.html -->
+{{ eachdo config.links }}
+<a href="{{ put href }}" class="button" target="_blank">{{ put label }}</a>
 {{ endeachdo }}
 ```
 
@@ -102,3 +130,5 @@ template = base_tailwind.html
 
 <h1 class="p-2">XYZ!</h1>
 ```
+
+`Licensed under GPLv3`

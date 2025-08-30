@@ -1,6 +1,6 @@
 name = Autograd
 description = An implementation of autograd / backpropagation.
-languages = Python
+tags = Python
 url = /projects/autograd
 template = project.html
 links = [

@@ -1,6 +1,6 @@
 name = BUBBL
 description = An Operating System for The x86 Architecture.
-languages = C / C++ / ASM
+tags = C / C++ / ASM
 url = /projects/bubbl
 template = project.html
 links = [

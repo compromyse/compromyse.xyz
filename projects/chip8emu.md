@@ -1,6 +1,6 @@
 name = CHIP8Emu
 description = An Emulator/Interpreter for CHIP-8.
-languages = C++
+tags = C++
 url = /projects/chip8emu
 template = project.html
 links = [
