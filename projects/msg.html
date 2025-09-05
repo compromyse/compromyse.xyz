@@ -64,6 +64,8 @@
                 <div class="prose md:prose-lg lg:prose-2xl prose-pink prose-invert w-full max-w-256 pt-12">
                     <p>See <a href="https://github.com/compromyse/compromyse.xyz">github.com/compromyse/compromyse.xyz</a> for an example site.</p>
 
+<p>The point of this project was very simple; I was in the mood to write a static site generator. I figured I&rsquo;d start with the most basic feature, &ldquo;includes,&rdquo; and it ended up expanding to supporting nested for loops. All I required was a simple static site generator that doesn&rsquo;t overdo it. Besides, who doesn&rsquo;t like writing a lexer and generation engine in C.</p>
+
 <h3>Compilation &amp; Usage</h3>
 
 <p><pre><code class="sh"># REQUIREMENTS: CMake, Git, GCC/Clang, GNUMake/Ninja
@@ -85,6 +87,12 @@ Usage: ./msg [-h] [-w] [-v] [-o &lt;output&gt;] &lt;directory&gt;
 
 <h3>Site Structure</h3>
 
+<p>The site structure is actually fairly simple. <code>/config.cfg</code> describes the static directories, in this case only &ldquo;assets.&rdquo; It could be any number of files &amp; folders, though.</p>
+
+<p>Since I wanted to manually define all the resources (pages), I added a list <code>resources</code> in <code>/config.cfg</code> to encapsulate the collection of web pages. This was largely inspired by C build systems, where each C file is listed in an array of filenames (See <a href="https://github.com/compromyse/msg/blob/main/CMakeLists.txt#L6">CMakeLists.txt for msg</a>).</p>
+
+<p>The partials though, must be placed in the hardcoded <code>/partials</code> folder. They may, however, be placed in subdirectories therein. I didn&rsquo;t see much of a point allowing multiple partial directories (and likewise with templates).</p>
+
 <p><pre><code class="sh">.
 ├── assets
 │   └── me.webp
@@ -103,6 +111,8 @@ Usage: ./msg [-h] [-w] [-v] [-o &lt;output&gt;] &lt;directory&gt;
 
 <h4>Includes - include files from <code>/partials</code></h4>
 
+<p>This directive simply fetches the file content of the operand, in this case <code>/partials/navbar.html</code> and replaces the caller&rsquo;s body with it.</p>
+
 <p><pre><code class="html">&lt;!-- index.html --&gt;
 &lt;html&gt;
   &lt;body&gt;
@@ -114,6 +124,8 @@ Usage: ./msg [-h] [-w] [-v] [-o &lt;output&gt;] &lt;directory&gt;
 </p>
 
 <h4>Contentfor - define content for templates</h4>
+
+<p>In this particular case, the template must have <code>content</code> directives, whose bodies are defined using <code>contentfor</code> directives. The example is fairly self-explanatory.</p>
 
 <p><pre><code class="html">&lt;!-- templates/base.html --&gt;
 &lt;html&gt;
@@ -136,8 +148,11 @@ Usage: ./msg [-h] [-w] [-v] [-o &lt;output&gt;] &lt;directory&gt;
 
 <h4>Eachdo - iterate over resources</h4>
 
+<p>These are actually fairly complicated; EACHDOs iterate over some array of strings or nested-configs.</p>
+
+<p>In the first example, the source being iterated over is the current page&rsquo;s <code>links</code> config. For each link, it&rsquo;s simply printing the respective href and label.</p>
+
 <p><pre><code class="html">&lt;!-- projects/xyz.html --&gt;
-title = XYZ
 links = [
     href = https://example.org
     label = abc
@@ -149,17 +164,27 @@ links = [
 
 &lt;h1&gt;XYZ!&lt;/h1&gt;
 
-&lt;!-- index.html --&gt;
-{{ eachdo resources.projects }}
-&lt;p&gt;{{ put title }}&lt;/p&gt;
-{{ endeachdo }}
-
 {{ eachdo page.links }}
 &lt;p&gt;{{ put href }}&lt;/p&gt;
 &lt;p&gt;{{ put label }}&lt;/p&gt;
 {{ endeachdo }}
 </code></pre>
-<pre><code class="html">&lt;!-- config.cfg --&gt;
+With this example, <code>/index.html</code> is iterating over the <code>projects</code> resource (just the /projects directory excluding index.html). For each of the pages, it&rsquo;s simply printing the page&rsquo;s title in a paragraph tag.</p>
+
+<p><pre><code class="html">&lt;!-- projects/xyz.html --&gt;
+title = XYZ
+---
+
+&lt;h1&gt;XYZ!&lt;/h1&gt;
+
+&lt;!-- index.html --&gt;
+{{ eachdo resources.projects }}
+&lt;p&gt;{{ put title }}&lt;/p&gt;
+{{ endeachdo }}
+</code></pre>
+This example is much like the first one, but instead of the links being defined in the current page, it&rsquo;s defined in <code>/config.cfg</code>.</p>
+
+<p><pre><code class="html">&lt;!-- config.cfg --&gt;
 links = [
     href = https://github.com/compromyse
     label = GITHUB
@@ -175,10 +200,13 @@ links = [
 </code></pre>
 </p>
 
-<h4>Template - specify template for page</h4>
+<h4>Page Options - specify template, priority in EACHDO iterations, etc.</h4>
+
+<p>Some page options can be defined in a page&rsquo;s config, such as the template that needs to be used, and the priority of this particular page when the resource containing the page (projects) is iterated over.</p>
 
 <p><pre><code class="html">&lt;!-- projects/xyz.html --&gt;
 template = base_tailwind.html
+priority = 100
 ---
 
 &lt;h1 class="p-2"&gt;XYZ!&lt;/h1&gt;
