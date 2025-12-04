@@ -5,11 +5,11 @@
         "nixpkgs": "nixpkgs"
       },
       "locked": {
-        "lastModified": 1756518200,
-        "narHash": "sha256-UhzWSsYNpsFu+YZLswJS5JbW95NbhVcLwkOkJBCYYKk=",
+        "lastModified": 1764861623,
+        "narHash": "sha256-54OREdSLWdqWp5lp5xgKbpAU0xfaCGT3PYG+aDbgke0=",
         "ref": "refs/heads/main",
-        "rev": "cf2d094a31523ccc20d85c05954809051e77a9a0",
-        "revCount": 278,
+        "rev": "c39cc319394993299874c135564d7675a2c5da45",
+        "revCount": 283,
         "submodules": true,
         "type": "git",
         "url": "ssh://git@github.com/compromyse/msg.git"
@@ -37,11 +37,11 @@
     },
     "nixpkgs_2": {
       "locked": {
-        "lastModified": 1753694789,
-        "narHash": "sha256-cKgvtz6fKuK1Xr5LQW/zOUiAC0oSQoA9nOISB0pJZqM=",
+        "lastModified": 1763283776,
+        "narHash": "sha256-Y7TDFPK4GlqrKrivOcsHG8xSGqQx3A6c+i7novT85Uk=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "dc9637876d0dcc8c9e5e22986b857632effeb727",
+        "rev": "50a96edd8d0db6cc8db57dab6bb6d6ee1f3dc49a",
         "type": "github"
       },
       "original": {
