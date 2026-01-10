@@ -16,9 +16,10 @@
                     tailwindcss_4
                     watchman
             ] ++ [
-            (pkgs.writeShellScriptBin "css" ''
-             tailwindcss -i tailwind_in.css -o assets/stylesheet.css -m $@
-             '')
+                (pkgs.writeShellScriptBin "css" ''
+                 tailwindcss -i tailwind_in.css -o assets/stylesheet.css -m $@
+                 '')
+
                 (pkgs.writeShellScriptBin "serve" ''
                  http-server -c-1 $@
                  '')
